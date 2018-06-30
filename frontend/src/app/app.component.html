@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>
+          Meus produtos
+        </h2>
+        <h2 class="alert alert-info" *ngIf="alert">{{alert.message}}</h2>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <h4>Formulário</h4>
+        <app-form [(produto)]="produto" (save)="submit($event)"></app-form>
+      </div>
+      
+      <div class="col-12">
+        <h4>Listagem</h4>
+        <app-list [produtos]="produtos" (update)="update($event)" (remove)="remove($event)"></app-list>
+      </div>
+    </div>
+  </div>
